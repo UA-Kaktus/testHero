@@ -1,0 +1,16 @@
+@import '_reset.css';
+@import '_variables.css';
+@import '_header.css';
+
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Rubik', sans-serif; */
+
+body {
+    font-size: 30px;
+}
+
+body div.cl123 {
+    font-size: 20px;
+    font-family: 'Rubik';
+    color: var(--main-color);
+}
