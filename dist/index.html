@@ -5,11 +5,536 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rubik:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.min.css">
     <title>Ratings Page</title>
 </head>
 <body>
-    <div class="cl123">some text</div>
+    <div class="mobile-menu">
+        <nav class="mobile-menu__list">
+            <ul>
+                <li data-multy='true'><a href="#">Casas de Apuestas</a></li>
+                <li data-multy='true'><a href="#">Bonos</a></li>
+                <li data-multy='true'><a href="#">Aplicaciones de Apuestas</a></li>
+                <li><a href="#">Guias</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu__close">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header__first-line">
+                <div class="header__logo">
+                    <img src="./assets/icons/logo.png" alt="logo">
+                </div>
+                <nav class="header__navigation">
+                    <ul>
+                        <li data-multy='true'><a href="#">Casas de Apuestas</a></li>
+                        <li data-multy='true'><a href="#">Bonos</a></li>
+                        <li data-multy='true'><a href="#">Aplicaciones de Apuestas</a></li>
+                        <li><a href="#">Guias</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="header__flag">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header__burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="header__second-line">
+                <div class="header__crumbs-hedline">Jump to</div>
+                <ul class="header__crumbs-list">
+                    <li class="header__crumbs-item header__crumbs-item_active"><a href="#">Betting Summary</a></li>
+                    <li class="header__crumbs-item"><a href="#">Fair Play Casino Bonuses</a></li>
+                    <li class="header__crumbs-item"><a href="#">Fair Play Casino Bonuses</a></li>
+                    <li class="header__crumbs-item"><a href="#">Fair Play Casino Bonuses</a></li>
+                    <li class="header__crumbs-item"><a href="#">Fair Play Casino Bonuses</a></li>
+                    <li class="header__crumbs-item"><a href="#">Fair Play Casino Bonuses</a></li>
+                    <li class="header__crumbs-item"><a href="#">Fair Play Casino Bonuses</a></li>
+                </ul>
+                <div class="header__crumbs-more">
+                    <img src="./assets/icons/chevronRight.svg" alt="more">
+                </div>
+                <div class="header__blur"></div>
+            </div>
+        </div>
+    </header>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="breadcrubs">
+                <a class="breadcrubs__home" href="#">
+                    <img src="./assets/icons/home.svg" alt="">
+                </a>
+                <div class="breadcrubs__arrow">
+                    <img src="./assets/icons/chevronRight.svg" alt="more">
+                </div>
+                <div class="breadcrubs__page">
+                    Sobre Nosotros
+                </div>
+            </div>
+            <section class="hero">
+                <h1 class="hero__title">Bonos de bienvenida en casas de apuestas disponibles en Colombia 2023</h1>
+                <div class="hero__text">
+                    Cada casa de apuestas en Colombia ofrece bonos de bienvenida con la intención de incentivar a nuevos jugadores. Si estás buscando las casas de apuestas con bonos más favorables, entonces no puedes perderte nuestra selección. También te contamos las condiciones de cada uno. ¡Sácale el máximo provecho a cada peso que apuestes!
+                </div>
+            </section>
+            <section class="table">
+                <div class="table__headline">
+                    <h2 class="table__title">Casas de Apuestas legales</h2>
+                    <div class="table__warning">
+                        <span>Lorem ipsum dolor sit amet consectetur</span>
+                        <img src="./assets/icons/18-icon.svg" alt="warning icon">
+                    </div>
+                </div>
+                <table>
+                    <tbody class="table__body">
+                        <tr>
+                            <td class="table-item">
+                                <div class="table-item__rate">
+                                    <div class="table-item__rate-img">
+                                        <img src="./assets/icons/logo-table.png" alt="casino logo">
+                                        <div class="table-item__rate-num">1</div>
+                                    </div>
+                                    <div class="table-item__rate-info">
+                                        <h4 class="table-item__rate-name">Betsson</h4>
+                                        <div class="table-item__rate-stars">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <span>4.8</span>
+                                        </div>
+                                        <div data-js="main-detail-btn" class="table-item__rate-detail">
+                                            Más información
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-item__triggers">
+                                    <ul>
+                                        <li>Grandes bonificaciones</li>
+                                        <li>Especializado en el apostador colombiano</li>
+                                        <li>Simplicidad de uso</li>
+                                    </ul>
+                                </div>
+                                <div class="talbe-item__bonus">
+                                    <div class="talbe-item__bonus-code">
+                                        <div class="talbe-item__bonus-title">Bono de bienvenida</div>
+                                        <div class="talbe-item__bonus-num">10000 Pesos</div>
+                                        <div class="talbe-item__bonus-word">Bonus code: <span>HYPERLUCK</span></div>
+                                    </div>
+                                    <a class="table-item__bonus-present" href="#">
+                                        <img src="./assets/icons/present-white.svg" alt="present">
+                                        <span>Obtener Bono</span>
+                                    </a>
+                                    <a class="table-item__bonus-button" href="#">
+                                        Leer Reseña
+                                    </a>
+                                </div>
+                                <div class="table-item__info" data-visible="false">
+                                    <div class="table-item__info-slider">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                    </div>
+                                    <div class="table-item__info-main">
+                                        <div class="table-item__info-descr">
+                                            <h4 class="table-item__info-title">Short review text</h4>
+                                            <p class="table-item__info-text">
+                                                Esta es una casa de apuestas muy interesante si te encuentras en Colombia. Aquí tendrás acceso a las mejores promociones del mercado, pudiendo ofrecerte una gran bonificacion de bienvenida para el apartado de apuestas deportivas. A esto se le suma un atractivo listado de juegos eSports. Sin embargo, debemos mencionar que no poseen la mejor de las ofertas deportivas. Disponen de menos de 10 deportes en su lista y muchos de ellos tienen un máximo de 4 ligas y torneos diferentes.
+                                            </p>
+                                        </div>
+                                        <div class="table-item__info-detail">
+                                            <div class="table-item__info-block">
+                                                <span>Supported Apps</span>
+                                                <div class="table-item__info-icons">
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/android.svg" alt="android">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/apple.svg" alt="apple">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/windows.svg" alt="windows">
+                                                        <img src="./assets/icons/cross.svg" alt="cross">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Supported Payments</span>
+                                                <div class="table-item__info-icons">
+                                                    <img src="./assets/icons/visa.png" alt="vias">
+                                                    <img src="./assets/icons/master.png" alt="mastercard">
+                                                    <img src="./assets/icons/bitcoin.png" alt="bitcoin">
+                                                    <img src="./assets/icons/applepay.png" alt="applepay">
+                                                    <img src="./assets/icons/skrill.png" alt="skrill">
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Min Deposit</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/cash.png" alt="cash">
+                                                    <span>10$</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Payout</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/time.png" alt="time">
+                                                    <span>1-3 Days</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-item__info-close">
+                                            <div class="table-item__rate-detail table-item__rate-detail_less" data-js="main-detail-btn-close">
+                                                Menos información
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-item">
+                                <div class="table-item__rate">
+                                    <div class="table-item__rate-img">
+                                        <img src="./assets/icons/logo-table.png" alt="casino logo">
+                                        <div class="table-item__rate-num">2</div>
+                                    </div>
+                                    <div class="table-item__rate-info">
+                                        <h4 class="table-item__rate-name">Betsson</h4>
+                                        <div class="table-item__rate-stars">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <span>4.8</span>
+                                        </div>
+                                        <div data-js="main-detail-btn" class="table-item__rate-detail">
+                                            Más información
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-item__triggers">
+                                    <ul>
+                                        <li>Grandes bonificaciones</li>
+                                        <li>Especializado en el apostador colombiano</li>
+                                        <li>Simplicidad de uso</li>
+                                    </ul>
+                                </div>
+                                <div class="talbe-item__bonus">
+                                    <div class="talbe-item__bonus-code">
+                                        <div class="talbe-item__bonus-title">Bono de bienvenida</div>
+                                        <div class="talbe-item__bonus-num">10000 Pesos</div>
+                                        <div class="talbe-item__bonus-word">Bonus code: <span>HYPERLUCK</span></div>
+                                    </div>
+                                    <a class="table-item__bonus-present" href="#">
+                                        <img src="./assets/icons/present-white.svg" alt="present">
+                                        <span>Obtener Bono</span>
+                                    </a>
+                                    <a class="table-item__bonus-button" href="#">
+                                        Leer Reseña
+                                    </a>
+                                </div>
+                                <div class="table-item__info" data-visible="false">
+                                    <div class="table-item__info-slider">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                    </div>
+                                    <div class="table-item__info-main">
+                                        <div class="table-item__info-descr">
+                                            <h4 class="table-item__info-title">Short review text</h4>
+                                            <p class="table-item__info-text">
+                                                Esta es una casa de apuestas muy interesante si te encuentras en Colombia. Aquí tendrás acceso a las mejores promociones del mercado, pudiendo ofrecerte una gran bonificacion de bienvenida para el apartado de apuestas deportivas. A esto se le suma un atractivo listado de juegos eSports. Sin embargo, debemos mencionar que no poseen la mejor de las ofertas deportivas. Disponen de menos de 10 deportes en su lista y muchos de ellos tienen un máximo de 4 ligas y torneos diferentes.
+                                            </p>
+                                        </div>
+                                        <div class="table-item__info-detail">
+                                            <div class="table-item__info-block">
+                                                <span>Supported Apps</span>
+                                                <div class="table-item__info-icons">
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/android.svg" alt="android">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/apple.svg" alt="apple">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/windows.svg" alt="windows">
+                                                        <img src="./assets/icons/cross.svg" alt="cross">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Supported Payments</span>
+                                                <div class="table-item__info-icons">
+                                                    <img src="./assets/icons/visa.png" alt="vias">
+                                                    <img src="./assets/icons/master.png" alt="mastercard">
+                                                    <img src="./assets/icons/bitcoin.png" alt="bitcoin">
+                                                    <img src="./assets/icons/applepay.png" alt="applepay">
+                                                    <img src="./assets/icons/skrill.png" alt="skrill">
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Min Deposit</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/cash.png" alt="cash">
+                                                    <span>10$</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Payout</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/time.png" alt="time">
+                                                    <span>1-3 Days</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-item__info-close">
+                                            <div class="table-item__rate-detail table-item__rate-detail_less" data-js="main-detail-btn-close">
+                                                Menos información
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-item">
+                                <div class="table-item__rate">
+                                    <div class="table-item__rate-img">
+                                        <img src="./assets/icons/logo-table.png" alt="casino logo">
+                                        <div class="table-item__rate-num">3</div>
+                                    </div>
+                                    <div class="table-item__rate-info">
+                                        <h4 class="table-item__rate-name">Betsson</h4>
+                                        <div class="table-item__rate-stars">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <span>4.8</span>
+                                        </div>
+                                        <div data-js="main-detail-btn" class="table-item__rate-detail table-item__rate-detail_less">
+                                            Menos información
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-item__triggers">
+                                    <ul>
+                                        <li>Grandes bonificaciones</li>
+                                        <li>Especializado en el apostador colombiano</li>
+                                        <li>Simplicidad de uso</li>
+                                    </ul>
+                                </div>
+                                <div class="talbe-item__bonus">
+                                    <div class="talbe-item__bonus-code">
+                                        <div class="talbe-item__bonus-title">Bono de bienvenida</div>
+                                        <div class="talbe-item__bonus-num">10000 Pesos</div>
+                                        <div class="talbe-item__bonus-word">Bonus code: <span>HYPERLUCK</span></div>
+                                    </div>
+                                    <a class="table-item__bonus-present" href="#">
+                                        <img src="./assets/icons/present-white.svg" alt="present">
+                                        <span>Obtener Bono</span>
+                                    </a>
+                                    <a class="table-item__bonus-button" href="#">
+                                        Leer Reseña
+                                    </a>
+                                </div>
+                                <div class="table-item__info" data-visible="true">
+                                    <div class="table-item__info-slider">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                    </div>
+                                    <div class="table-item__info-main">
+                                        <div class="table-item__info-descr">
+                                            <h4 class="table-item__info-title">Short review text</h4>
+                                            <p class="table-item__info-text">
+                                                Esta es una casa de apuestas muy interesante si te encuentras en Colombia. Aquí tendrás acceso a las mejores promociones del mercado, pudiendo ofrecerte una gran bonificacion de bienvenida para el apartado de apuestas deportivas. A esto se le suma un atractivo listado de juegos eSports. Sin embargo, debemos mencionar que no poseen la mejor de las ofertas deportivas. Disponen de menos de 10 deportes en su lista y muchos de ellos tienen un máximo de 4 ligas y torneos diferentes.
+                                            </p>
+                                        </div>
+                                        <div class="table-item__info-detail">
+                                            <div class="table-item__info-block">
+                                                <span>Supported Apps</span>
+                                                <div class="table-item__info-icons">
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/android.svg" alt="android">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/apple.svg" alt="apple">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/windows.svg" alt="windows">
+                                                        <img src="./assets/icons/cross.svg" alt="cross">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Supported Payments</span>
+                                                <div class="table-item__info-icons">
+                                                    <img src="./assets/icons/visa.png" alt="vias">
+                                                    <img src="./assets/icons/master.png" alt="mastercard">
+                                                    <img src="./assets/icons/bitcoin.png" alt="bitcoin">
+                                                    <img src="./assets/icons/applepay.png" alt="applepay">
+                                                    <img src="./assets/icons/skrill.png" alt="skrill">
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Min Deposit</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/cash.png" alt="cash">
+                                                    <span>10$</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Payout</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/time.png" alt="time">
+                                                    <span>1-3 Days</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-item__info-close">
+                                            <div class="table-item__rate-detail table-item__rate-detail_less" data-js="main-detail-btn-close">
+                                                Menos información
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-item">
+                                <div class="table-item__rate">
+                                    <div class="table-item__rate-img">
+                                        <img src="./assets/icons/logo-table.png" alt="casino logo">
+                                        <div class="table-item__rate-num">4</div>
+                                    </div>
+                                    <div class="table-item__rate-info">
+                                        <h4 class="table-item__rate-name">Betsson</h4>
+                                        <div class="table-item__rate-stars">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <img src="./assets/icons/star2.svg" alt="star">
+                                            <span>4.8</span>
+                                        </div>
+                                        <div data-js="main-detail-btn" class="table-item__rate-detail">
+                                            Más información
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-item__triggers">
+                                    <ul>
+                                        <li>Grandes bonificaciones</li>
+                                        <li>Especializado en el apostador colombiano</li>
+                                        <li>Simplicidad de uso</li>
+                                    </ul>
+                                </div>
+                                <div class="talbe-item__bonus">
+                                    <div class="talbe-item__bonus-code">
+                                        <div class="talbe-item__bonus-title">Bono de bienvenida</div>
+                                        <div class="talbe-item__bonus-num">10000 Pesos</div>
+                                        <div class="talbe-item__bonus-word">Bonus code: <span>HYPERLUCK</span></div>
+                                    </div>
+                                    <a class="table-item__bonus-present" href="#">
+                                        <img src="./assets/icons/present-white.svg" alt="present">
+                                        <span>Obtener Bono</span>
+                                    </a>
+                                    <a class="table-item__bonus-button" href="#">
+                                        Leer Reseña
+                                    </a>
+                                </div>
+                                <div class="table-item__info" data-visible="false">
+                                    <div class="table-item__info-slider">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                        <img src="./assets/images/phone.jpg" alt="phone">
+                                    </div>
+                                    <div class="table-item__info-main">
+                                        <div class="table-item__info-descr">
+                                            <h4 class="table-item__info-title">Short review text</h4>
+                                            <p class="table-item__info-text">
+                                                Esta es una casa de apuestas muy interesante si te encuentras en Colombia. Aquí tendrás acceso a las mejores promociones del mercado, pudiendo ofrecerte una gran bonificacion de bienvenida para el apartado de apuestas deportivas. A esto se le suma un atractivo listado de juegos eSports. Sin embargo, debemos mencionar que no poseen la mejor de las ofertas deportivas. Disponen de menos de 10 deportes en su lista y muchos de ellos tienen un máximo de 4 ligas y torneos diferentes.
+                                            </p>
+                                        </div>
+                                        <div class="table-item__info-detail">
+                                            <div class="table-item__info-block">
+                                                <span>Supported Apps</span>
+                                                <div class="table-item__info-icons">
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/android.svg" alt="android">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/apple.svg" alt="apple">
+                                                        <img src="./assets/icons/check.svg" alt="check">
+                                                    </div>
+                                                    <div class="table-item__info-icons-item">
+                                                        <img src="./assets/icons/windows.svg" alt="windows">
+                                                        <img src="./assets/icons/cross.svg" alt="cross">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Supported Payments</span>
+                                                <div class="table-item__info-icons">
+                                                    <img src="./assets/icons/visa.png" alt="vias">
+                                                    <img src="./assets/icons/master.png" alt="mastercard">
+                                                    <img src="./assets/icons/bitcoin.png" alt="bitcoin">
+                                                    <img src="./assets/icons/applepay.png" alt="applepay">
+                                                    <img src="./assets/icons/skrill.png" alt="skrill">
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Min Deposit</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/cash.png" alt="cash">
+                                                    <span>10$</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-item__info-block">
+                                                <span>Payout</span>
+                                                <div class="table-item__info-icons">
+                                                    <img class="table-item__info-icons_sm" src="./assets/icons/time.png" alt="time">
+                                                    <span>1-3 Days</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-item__info-close">
+                                            <div class="table-item__rate-detail table-item__rate-detail_less" data-js="main-detail-btn-close">
+                                                Menos información
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="./main.js"></script>
 </body>
 </html>

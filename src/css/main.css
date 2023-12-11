@@ -1,16 +1,48 @@
 @import '_reset.css';
 @import '_variables.css';
+@import '_mobile-menu.css';
 @import '_header.css';
+@import '_breadcrumbs.css';
+@import '_hero.css';
+@import '_table.css';
 
 /* font-family: 'Poppins', sans-serif; */
 /* font-family: 'Rubik', sans-serif; */
 
-body {
-    font-size: 30px;
+html {
+    font-size: 10px;
+    line-height: 1.4;
 }
 
-body div.cl123 {
-    font-size: 20px;
-    font-family: 'Rubik';
-    color: var(--main-color);
+.page-wrapper {
+    padding-top: 128px;
+    padding-bottom: 100px;
+    background-color: #ECECF6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1310px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
 }

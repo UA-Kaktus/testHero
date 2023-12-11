@@ -1,0 +1,26 @@
+.breadcrubs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 0;
+}
+
+.breadcrubs__home {
+    width: 16px;
+    height: 16px;
+}
+
+.breadcrubs__arrow {
+    height: 5px;
+    width: 3px;
+    transform: translateY(-4px);
+}
+
+.breadcrubs__home img, .breadcrubs__arrow img  {
+    height: 100%;
+}
+
+.breadcrubs__page {
+    font-size: 10px;
+    font-weight: 700;
+}
