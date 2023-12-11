@@ -38,11 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 SELECTORS.tabsInfo.forEach((arrEl, arrInd) => {
                     if (ind != arrInd) {
                         arrEl.dataset.visible = false;
+                        arrEl.style.height = `0px`;
                     } else {
                         if (arrEl.dataset.visible === 'true') {
                             arrEl.dataset.visible = false;
+                            arrEl.style.height = `0px`;
                         } else if (arrEl.dataset.visible === 'false'){
                             arrEl.dataset.visible = true;
+
+                            const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                            let maxHeigth = 0;
+                            innerElements.forEach( el => {
+                                if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                                    maxHeigth = window.getComputedStyle(el).height;
+                                }
+                            });
+
+                            maxHeigth = +maxHeigth.slice(0,-2) + 20;
+                            arrEl.style.height = `${maxHeigth}px`;
                         }
                     }
                 });
@@ -66,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         SELECTORS.tabsLessOnly.forEach((el,ind) => {
             el.addEventListener('click', () => {
                 SELECTORS.tabsInfo[ind].dataset.visible = false;
+                SELECTORS.tabsInfo[ind].style.height = '0px';
                 SELECTORS.tabsMore[ind].classList.remove('table-item__rate-detail_less');
                 SELECTORS.tabsMore[ind].innerHTML = 'Más información';
             })
