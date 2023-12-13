@@ -301,13 +301,10 @@ tr:nth-of-type(4) .table-item__rate-num {
 }
 
 .table-item__info {
-    /* display: none; */
     grid-template-columns: 415px 1fr;
     grid-column-start: 1;
     grid-column-end: 4;
     column-gap: 24px;
-    /* padding-top: 20px; */
-    /* border-top: solid 1px #E4E5EC; */
 
     height: 0;
     display: grid;
@@ -316,12 +313,9 @@ tr:nth-of-type(4) .table-item__rate-num {
 }
 
 .table-item__info[data-visible="true"] {
-    /* display: grid; */
     padding-top: 20px;
     border-top: solid 1px #E4E5EC;
     margin-top: 20px;
-
-    /* height: auto; */
 }
 
 .table-item__info-slider {

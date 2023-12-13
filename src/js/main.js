@@ -10,50 +10,49 @@ document.addEventListener('DOMContentLoaded', () => {
         tabsLessOnly: document.querySelectorAll('[data-js="main-detail-btn-close"]'),
     }
 
-    mobileMenu();
+    function listinerForMenu(selector, shiftLeft, overflow) {
+        selector.addEventListener('click', () => {
+            SELECTORS.mobileMenu.style.left = shiftLeft;
+            document.body.style.overflow = overflow;
+        });
+    }
+
+    listinerForMenu(SELECTORS.burger, '0', 'hidden');
+    listinerForMenu(SELECTORS.mobileClose, '-100%', '');
+
+    SELECTORS.mobileMenuSingleLinks.forEach(el => {
+        listinerForMenu(el, '-100%', '');
+    });
+    //--
     tabs();
 
-    function mobileMenu() {
-        SELECTORS.burger.addEventListener('click', () => {
-            SELECTORS.mobileMenu.style.left = '0';
-            document.body.style.overflow = 'hidden';
-        });
-    
-        SELECTORS.mobileClose.addEventListener('click', () => {
-            SELECTORS.mobileMenu.style.left = '-100%';
-            document.body.style.overflow = '';
-        });
-    
-        SELECTORS.mobileMenuSingleLinks.forEach(el => {
-            el.addEventListener('click', () => {
-                SELECTORS.mobileMenu.style.left = '-100%';
-                document.body.style.overflow = '';
-            })
-        });
+    function calcTabHeight(infoBlock) {
+        let maxHeigth = 0;
+        const innerElements = infoBlock.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+
+        if (window.innerWidth < 992) {
+            innerElements.forEach(el => {
+                maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
+                console.log(+window.getComputedStyle(el).height.slice(0,-2));
+            });
+            maxHeigth = maxHeigth + 33 + 12;
+        } else {
+            innerElements.forEach( el => {
+                if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                    maxHeigth = +window.getComputedStyle(el).height.slice(0,-2);
+                }
+            });
+            maxHeigth = maxHeigth + 20;
+            console.log(window.getComputedStyle(infoBlock.querySelector('.table-item__info-descr')).height);
+        }
+
+        infoBlock.style.height = `${maxHeigth}px`;
     }
 
     function tabs() {
         SELECTORS.tabsInfo.forEach((arrEl) => {
             if (arrEl.dataset.visible === 'true') {
-                let maxHeigth = 0;
-                    if (window.innerWidth < 992) {
-                        const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
-                        innerElements.forEach( el => {
-                            maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
-                        });
-                        console.log(maxHeigth)
-                        maxHeigth = maxHeigth + 33 + 12;
-                    } else {
-                        const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
-                        innerElements.forEach( el => {
-                            if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
-                                maxHeigth = window.getComputedStyle(el).height;
-                            }
-                        });
-                        maxHeigth = +maxHeigth.slice(0,-2) + 20;
-                    }
-
-                arrEl.style.height = `${maxHeigth}px`;
+                calcTabHeight(arrEl);
             }
         });
 
@@ -70,47 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else if (arrEl.dataset.visible === 'false'){
                             arrEl.dataset.visible = true;
 
-                            let maxHeigth = 0;
-                            if (window.innerWidth < 992) {
-                                const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
-                                innerElements.forEach( el => {
-                                    if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
-                                        maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
-                                    }
-                                });
-                                maxHeigth = maxHeigth + 'px';
-                            } else {
-                                const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
-                                innerElements.forEach( el => {
-                                    if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
-                                        maxHeigth = window.getComputedStyle(el).height;
-                                    }
-                                });
-                            }
-    
-                            maxHeigth = +maxHeigth.slice(0,-2) + 20;
-                            arrEl.style.height = `${maxHeigth}px`;
-
-                            // let maxHeigth = 0;
-                            // if (window.innerWidth < 992) {
-                            //     const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
-                            //     innerElements.forEach( el => {
-                            //         if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
-                            //             maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
-                            //         }
-                            //     });
-                            //     maxHeigth = maxHeigth + 32 + 20;
-                            // } else {
-                            //     const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
-                            //     innerElements.forEach( el => {
-                            //         if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
-                            //             maxHeigth = window.getComputedStyle(el).height;
-                            //         }
-                            //     });
-                            //     maxHeigth = +maxHeigth.slice(0,-2) + 20;
-                            // }
-
-                            // arrEl.style.height = `${maxHeigth}px`;
+                            calcTabHeight(arrEl);
                         }
                     }
                 });
