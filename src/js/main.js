@@ -33,6 +33,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function tabs() {
+        SELECTORS.tabsInfo.forEach((arrEl) => {
+            if (arrEl.dataset.visible === 'true') {
+                let maxHeigth = 0;
+                    if (window.innerWidth < 992) {
+                        const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                        innerElements.forEach( el => {
+                            maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
+                        });
+                        console.log(maxHeigth)
+                        maxHeigth = maxHeigth + 33 + 12;
+                    } else {
+                        const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                        innerElements.forEach( el => {
+                            if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                                maxHeigth = window.getComputedStyle(el).height;
+                            }
+                        });
+                        maxHeigth = +maxHeigth.slice(0,-2) + 20;
+                    }
+
+                arrEl.style.height = `${maxHeigth}px`;
+            }
+        });
+
         SELECTORS.tabsMore.forEach((el,ind) => {
             el.addEventListener('click', () => {
                 SELECTORS.tabsInfo.forEach((arrEl, arrInd) => {
@@ -46,19 +70,51 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else if (arrEl.dataset.visible === 'false'){
                             arrEl.dataset.visible = true;
 
-                            const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
                             let maxHeigth = 0;
-                            innerElements.forEach( el => {
-                                if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
-                                    maxHeigth = window.getComputedStyle(el).height;
-                                }
-                            });
-
+                            if (window.innerWidth < 992) {
+                                const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                                innerElements.forEach( el => {
+                                    if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                                        maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
+                                    }
+                                });
+                                maxHeigth = maxHeigth + 'px';
+                            } else {
+                                const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                                innerElements.forEach( el => {
+                                    if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                                        maxHeigth = window.getComputedStyle(el).height;
+                                    }
+                                });
+                            }
+    
                             maxHeigth = +maxHeigth.slice(0,-2) + 20;
                             arrEl.style.height = `${maxHeigth}px`;
+
+                            // let maxHeigth = 0;
+                            // if (window.innerWidth < 992) {
+                            //     const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                            //     innerElements.forEach( el => {
+                            //         if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                            //             maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
+                            //         }
+                            //     });
+                            //     maxHeigth = maxHeigth + 32 + 20;
+                            // } else {
+                            //     const innerElements = arrEl.querySelectorAll('.table-item__info-slider, .table-item__info-main');
+                            //     innerElements.forEach( el => {
+                            //         if (+window.getComputedStyle(el).height.slice(0,-2) > maxHeigth) {
+                            //             maxHeigth = window.getComputedStyle(el).height;
+                            //         }
+                            //     });
+                            //     maxHeigth = +maxHeigth.slice(0,-2) + 20;
+                            // }
+
+                            // arrEl.style.height = `${maxHeigth}px`;
                         }
                     }
                 });
+
                 SELECTORS.tabsMore.forEach((el,index) => {
                     if (ind != index) {
                         el.classList.remove('table-item__rate-detail_less');
@@ -83,6 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 SELECTORS.tabsMore[ind].classList.remove('table-item__rate-detail_less');
                 SELECTORS.tabsMore[ind].innerHTML = 'Más información';
             })
-        })
+        });
     }
 });

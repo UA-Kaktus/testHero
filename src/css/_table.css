@@ -41,13 +41,12 @@ table {
 .table-item {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    /* min-height: 156px; */
     padding: 12px;
-    /* row-gap: 20px; */
 
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
+    column-gap: 8px;
 }
 
 .table-item__rate {
@@ -434,6 +433,11 @@ tr:nth-of-type(4) .table-item__rate-num {
 
     .table-item {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .table-item:has(.table-item__info[data-visible="false"]) {
+        padding-bottom: 0;
     }
 
     .table-item__rate {
@@ -479,8 +483,8 @@ tr:nth-of-type(4) .table-item__rate-num {
     }
 
     .table-item__rate-img {
-        width: 120px;
-        height: 96px;
+        width: 100px;
+        height: 84px;
     }
 
     .table-item__info {
@@ -488,8 +492,13 @@ tr:nth-of-type(4) .table-item__rate-num {
         grid-column-end: 2;
     }
 
+    .table-item__info[data-visible='true'] {
+        margin-top: 0;
+    }
+
     .table-item__info-slider {
         padding-bottom: 16px;
+        height: 300px;
     }
 
     .table-item__info-main {
