@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     SELECTORS.mobileMenuSingleLinks.forEach(el => {
         listinerForMenu(el, '-100%', '');
     });
-    //--
-    tabs();
 
     function calcTabHeight(infoBlock) {
         let maxHeigth = 0;
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth < 992) {
             innerElements.forEach(el => {
                 maxHeigth = maxHeigth + +window.getComputedStyle(el).height.slice(0,-2);
-                console.log(+window.getComputedStyle(el).height.slice(0,-2));
             });
             maxHeigth = maxHeigth + 33 + 12;
         } else {
@@ -43,61 +40,62 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             maxHeigth = maxHeigth + 20;
-            console.log(window.getComputedStyle(infoBlock.querySelector('.table-item__info-descr')).height);
+            // console.log(window.getComputedStyle(infoBlock.querySelector('.table-item__info-descr')).height);
         }
 
         infoBlock.style.height = `${maxHeigth}px`;
     }
 
-    function tabs() {
+    //here is bug with height. Text height ".table-item__info-descr" from this block has smaller number at first load. Timeout helped.
+    setTimeout(() => {
         SELECTORS.tabsInfo.forEach((arrEl) => {
             if (arrEl.dataset.visible === 'true') {
                 calcTabHeight(arrEl);
             }
         });
+    }, 100);
 
-        SELECTORS.tabsMore.forEach((el,ind) => {
-            el.addEventListener('click', () => {
-                SELECTORS.tabsInfo.forEach((arrEl, arrInd) => {
-                    if (ind != arrInd) {
+    SELECTORS.tabsMore.forEach((el,ind) => {
+        el.addEventListener('click', () => {
+            SELECTORS.tabsInfo.forEach((arrEl, arrInd) => {
+                if (ind != arrInd) {
+                    arrEl.dataset.visible = false;
+                    arrEl.style.height = `0px`;
+                } else {
+                    if (arrEl.dataset.visible === 'true') {
                         arrEl.dataset.visible = false;
                         arrEl.style.height = `0px`;
-                    } else {
-                        if (arrEl.dataset.visible === 'true') {
-                            arrEl.dataset.visible = false;
-                            arrEl.style.height = `0px`;
-                        } else if (arrEl.dataset.visible === 'false'){
-                            arrEl.dataset.visible = true;
+                    } else if (arrEl.dataset.visible === 'false'){
+                        arrEl.dataset.visible = true;
 
-                            calcTabHeight(arrEl);
-                        }
+                        calcTabHeight(arrEl);
                     }
-                });
+                }
+            });
 
-                SELECTORS.tabsMore.forEach((el,index) => {
-                    if (ind != index) {
+            SELECTORS.tabsMore.forEach((el,index) => {
+                if (ind != index) {
+                    el.classList.remove('table-item__rate-detail_less');
+                    el.innerHTML = 'Más información';
+                } else {
+                    if (el.classList.contains('table-item__rate-detail_less')) {
                         el.classList.remove('table-item__rate-detail_less');
-                        el.innerHTML = 'Más información';
+                    el.innerHTML = 'Más información';
                     } else {
-                        if (el.classList.contains('table-item__rate-detail_less')) {
-                            el.classList.remove('table-item__rate-detail_less');
-                        el.innerHTML = 'Más información';
-                        } else {
-                            el.classList.add('table-item__rate-detail_less');
-                            el.innerHTML = 'Menos información';
-                        }
+                        el.classList.add('table-item__rate-detail_less');
+                        el.innerHTML = 'Menos información';
                     }
-                });
+                }
             });
         });
-    
-        SELECTORS.tabsLessOnly.forEach((el,ind) => {
-            el.addEventListener('click', () => {
-                SELECTORS.tabsInfo[ind].dataset.visible = false;
-                SELECTORS.tabsInfo[ind].style.height = '0px';
-                SELECTORS.tabsMore[ind].classList.remove('table-item__rate-detail_less');
-                SELECTORS.tabsMore[ind].innerHTML = 'Más información';
-            })
-        });
-    }
+    });
+
+    SELECTORS.tabsLessOnly.forEach((el,ind) => {
+        el.addEventListener('click', () => {
+            SELECTORS.tabsInfo[ind].dataset.visible = false;
+            SELECTORS.tabsInfo[ind].style.height = '0px';
+            SELECTORS.tabsMore[ind].classList.remove('table-item__rate-detail_less');
+            SELECTORS.tabsMore[ind].innerHTML = 'Más información';
+        })
+    });
 });
